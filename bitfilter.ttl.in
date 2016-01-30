@@ -1,0 +1,214 @@
+@prefix atom:  <http://lv2plug.in/ns/ext/atom#> .
+@prefix doap:  <http://usefulinc.com/ns/doap#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix lv2:   <http://lv2plug.in/ns/lv2core#> .
+@prefix pg:    <http://lv2plug.in/ns/ext/port-groups#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://gareus.org/rgareus#me>
+	a foaf:Person;
+	foaf:name "Robin Gareus";
+	foaf:mbox <mailto:robin@gareus.org>;
+	foaf:homepage <http://gareus.org/> .
+
+<http://gareus.org/oss/lv2/bitfilter>
+	a lv2:Plugin, lv2:MixerPlugin, doap:Project;
+	doap:license <http://usefulinc.com/doap/licenses/gpl>;
+	doap:maintainer <http://gareus.org/rgareus#me>;
+	doap:name "Bit Filter";
+	@VERSION@
+	lv2:optionalFeature lv2:hardRTCapable;
+	lv2:port [
+		a lv2:AudioPort ,
+			lv2:InputPort;
+		lv2:index 0;
+		lv2:symbol "in";
+		lv2:name "In";
+	] , [
+		a lv2:AudioPort ,
+			lv2:OutputPort;
+		lv2:index 1;
+		lv2:symbol "out";
+		lv2:name "Out";
+	] , [
+		a lv2:InputPort ,
+			lv2:ControlPort;
+		lv2:index 2;
+		lv2:symbol "mode";
+		lv2:name "Mode";
+		lv2:default 0;
+		lv2:minimum 0;
+		lv2:maximum 1;
+		lv2:portProperty lv2:enumeration, lv2:integer;
+		lv2:scalePoint [
+			rdf:value 0
+			rdfs:label "Absolute (0dBFS, 32bit)";
+		] , [
+			rdfs:label "Relative (Mantissa)";
+			rdf:value 1
+		]
+	] , [
+		a lv2:InputPort, lv2:ControlPort;
+		lv2:index 3; lv2:symbol "bit0"; lv2:name "Bit 0";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+		lv2:portProperty lv2:toggled, lv2:integer;
+	] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 4; lv2:symbol "bit1"; lv2:name "Bit 1";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 5; lv2:symbol "bit2"; lv2:name "Bit 2";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 6; lv2:symbol "bit3"; lv2:name "Bit 3";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 7; lv2:symbol "bit4"; lv2:name "Bit 4";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 8; lv2:symbol "bit5"; lv2:name "Bit 5";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 9; lv2:symbol "bit6"; lv2:name "Bit 6";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 10; lv2:symbol "bit7"; lv2:name "Bit 7";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 11; lv2:symbol "bit8"; lv2:name "Bit 8";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 12; lv2:symbol "bit9"; lv2:name "Bit 9";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 13; lv2:symbol "bit10"; lv2:name "Bit 10";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 14; lv2:symbol "bit11"; lv2:name "Bit 11";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 15; lv2:symbol "bit12"; lv2:name "Bit 12";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 16; lv2:symbol "bit13"; lv2:name "Bit 13";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 17; lv2:symbol "bit14"; lv2:name "Bit 14";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 18; lv2:symbol "bit15"; lv2:name "Bit 15";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 19; lv2:symbol "bit16"; lv2:name "Bit 16";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 20; lv2:symbol "bit17"; lv2:name "Bit 17";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 21; lv2:symbol "bit18"; lv2:name "Bit 18";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 22; lv2:symbol "bit19"; lv2:name "Bit 19";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 23; lv2:symbol "bit20"; lv2:name "Bit 20";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 24; lv2:symbol "bit21"; lv2:name "Bit 21";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 25; lv2:symbol "bit22"; lv2:name "Bit 22";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 26; lv2:symbol "bit23"; lv2:name "Bit 23";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 27; lv2:symbol "bit24"; lv2:name "Bit 24 (abs)";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 28; lv2:symbol "bit25"; lv2:name "Bit 25 (abs)";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 29; lv2:symbol "bit26"; lv2:name "Bit 26 (abs)";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 30; lv2:symbol "bit27"; lv2:name "Bit 27 (abs)";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 31; lv2:symbol "bit28"; lv2:name "Bit 28 (abs)";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 32; lv2:symbol "bit29"; lv2:name "Bit 29 (abs)";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 33; lv2:symbol "bit30"; lv2:name "Bit 30 (abs)";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+  ] , [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 34; lv2:symbol "bit31"; lv2:name "Bit 31 (sign)";
+		lv2:default 1; lv2:minimum 0; lv2:maximum 1;
+    lv2:portProperty lv2:toggled, lv2:integer;
+
+	];
+	rdfs:comment "Bit Filter"
+	.
