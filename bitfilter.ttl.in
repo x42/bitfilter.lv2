@@ -42,11 +42,11 @@
 		lv2:maximum 1;
 		lv2:portProperty lv2:enumeration, lv2:integer;
 		lv2:scalePoint [
-			rdf:value 0
+			rdf:value 0;
 			rdfs:label "Absolute (0dBFS, 32bit)";
 		] , [
+			rdf:value 1;
 			rdfs:label "Relative (Mantissa)";
-			rdf:value 1
 		]
 	] , [
 		a lv2:InputPort, lv2:ControlPort;
